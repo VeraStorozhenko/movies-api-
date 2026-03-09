@@ -58,7 +58,11 @@ def create_app() -> FastAPI:
 
     app.add_middleware(
         CORSMiddleware,
-        allow_origins=["http://localhost:3000"],
+        allow_origins=[
+            "http://localhost:3000",
+            "https://movies-frontend-en6j0npx8-verastorozhenkos-projects.vercel.app",
+            "https://*.vercel.app"  # все vercel домены
+        ],
         allow_methods=["*"],
         allow_headers=["*"],
     )
