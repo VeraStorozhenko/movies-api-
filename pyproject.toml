@@ -1,0 +1,17 @@
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+exclude = [".venv", "migrations/versions"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.9"
+ignore_missing_imports = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+warn_unused_configs = true
+exclude = "(\\.venv|migrations/versions)"
+files = ["app", "tests"]

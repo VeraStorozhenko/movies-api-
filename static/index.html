@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section id="authView" class="card auth-screen" aria-label="authentication">
+        <header class="card-header">
+          <h1>Welcome</h1>
+          <p>Register or log in to enter the chat</p>
+        </header>
+
+        <label class="field">
+          <span>Username</span>
+          <input id="authUser" placeholder="username" />
+        </label>
+        <label class="field">
+          <span>Password</span>
+          <div class="password-wrap">
+            <input id="authPass" type="password" placeholder="password" />
+            <button id="togglePassBtn" type="button" class="eye-btn" aria-label="Show password">
+              &#128065;
+            </button>
+          </div>
+        </label>
+
+        <div class="auth-actions">
+          <button id="registerBtn" type="button" class="ghost">Register</button>
+          <button id="loginBtn" type="button">Login</button>
+        </div>
+        <p id="authStatus" class="status">Not authenticated</p>
+        <p id="authHint" class="hint"></p>
+      </section>
+
+      <section id="chatView" class="card hidden" aria-label="chat">
+        <header class="chat-head">
+          <div>
+            <h1>Chat</h1>
+            <p id="userBadge" class="status"></p>
+          </div>
+          <button id="logoutBtn" type="button" class="ghost">Logout</button>
+        </header>
+
+        <section class="controls" aria-label="chat controls">
+          <label class="field">
+            <span>Room</span>
+            <input id="room" placeholder="room" value="general" />
+          </label>
+          <label class="field">
+            <span>To (optional)</span>
+            <input id="to" placeholder="username for private message" list="userSuggestions" />
+            <datalist id="userSuggestions"></datalist>
+          </label>
+        </section>
+
+        <section class="composer" aria-label="message composer">
+          <input id="msg" placeholder="Write a message" />
+          <button id="sendBtn" type="button">Send</button>
+        </section>
+
+        <section class="presence" aria-label="online users">
+          <h2>Online users</h2>
+          <ul id="users" class="users"></ul>
+        </section>
+
+        <ul id="log" class="log" aria-live="polite"></ul>
+      </section>
+    </main>
+
+    <script src="/static/chat.js"></script>
+  </body>
+</html>
