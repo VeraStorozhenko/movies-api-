@@ -60,8 +60,9 @@ def create_app() -> FastAPI:
         CORSMiddleware,
         allow_origins=[
             "http://localhost:3000",
+            "https://movies-frontend-gamma.vercel.app",
             "https://movies-frontend-en6j0npx8-verastorozhenkos-projects.vercel.app",
-            "https://*.vercel.app"  # все vercel домены
+            "https://*.vercel.app"
         ],
         allow_methods=["*"],
         allow_headers=["*"],
